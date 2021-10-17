@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'craiglist/static/css/style.css' %}">
+    <title>Craiglist</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- bootstrap -->
+    <!-- Materialize -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Materialize -->
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">Craiglist</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="front-text" style="text-align: center;">
+                <h3> Hey! What do you want to Search</h3>
+            </div>
+            <div class="row" style="justify-content: space-between;">
+                <div class="col-s4" style="justify-content: space-between;">
+                    <div class="center">
+                        <i class="large material-icons" style="color: #ee6e73;">flash_on</i>
+                        <p>Fast Craiglist web Scrapper</p>
+                        <p class="light center">Get Faster results</p>
+                    </div>
+                </div>
+                <div class="col-s4" style="justify-content: space-between;">
+                    <div class="center">
+                        <i class="large material-icons" style="color: #ee6e73;">accessibility</i>
+                        <p>Fast Craiglist web Scrapper</p>
+                        <p class="light center">Scrap away with beautiful UI</p>
+                    </div>
+                </div>
+                <div class="col-s4" style="justify-content: space-between;">
+                    <div class="center">
+                        <i class="large material-icons" style="color: #ee6e73;">camera</i>
+                        <p>Fast Craiglist web Scrapper</p>
+                        <p class="light center">Get Picture Filtered results</p>
+                    </div>
+                </div>
+            </div>
+            <form action="{% url 'new_search' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="search" placeholder="search">
+                <button class="btn waves-effect waves-light" type="submit" name="action">submit
+                    <i class="fab fa-searchengin"></i>
+                </button>
+            </form>
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </main>
+    <footer></footer>
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap -->
+</body>
+
+</html>
